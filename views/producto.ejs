@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<%-include("./partials/head")%>
+
+<body>
+    <%-include("./partials/header")%>
+<main>
+    <br>
+    <section id="producto">
+        <div class='fotoProductoBici'>
+            <article class="foto">
+                <img  src="/images/products/<%= product.image %>" alt="Futura Futy" width="85%" height="100%" title="Futura Futy">
+            </article>
+        </div>
+        <div>
+            <article id="productoInfo">
+                <h2 id="nombreProducto"><%= product.name%></h2>
+                <p class="precio">$ <%= product.price %></p>
+                <br>
+                <br>
+                <p id="cantidadDisponible">3 disponibles</p>
+                <a href="carrito"><button  id="botonAnadir" type="button">Añadir al carrito</button></a>
+                <br>
+                <br>
+                <p id="cuotasDisponibles">12 cuotas de $ <%= product.price / 12 %> </p>
+            </article> 
+        </div>
+        <div id="infoDescrip-Adicional">
+            <div id="descripcionProducto">
+               <h4 class="tituloDescripcionInfo" >Descripcion del producto</h4> <br>
+                <p><%= product.description %></p>
+                
+                <br>
+            </div>
+                    
+            <div id="infoAdicional"> 
+                <h4 class="tituloDescripcionInfo">Informacion adicional</h4><br>
+                <p class="descripcionParrafo">
+                    <%= product.info %>
+                </p>
+            </div>
+            <div class='botonEditYDeleted'>
+                <div class='cajabotonEditYDeleted'>
+                    <%  if(typeof id != 'undefined') { %>
+                    <a href="/producto/edit/<%= product.id %>" class="action-button edit">EDITAR PRODUCTO</a>
+                    <form action="/producto/delete/<%= product.id %>?_method=DELETE" method="POST">
+                        <button type="submit" class="action-button delete">ELIMINAR</button>
+                    </form>
+                    <br>
+                    <% } %>
+                </div>
+            </div>
+        
+        </div>
+           
+    </section>
+    
+    <hr>
+        <h2>Productos relacionados</h2>
+    <hr>
+    
+    <section id="otrosProductos">
+        <article class="productRelacionado">
+            <a  href="#"><img src="/images/bici4.jpg" alt="bicicleta4" width="250px" height="250px"  ></a>
+        </article>
+        <article class="productRelacionado">
+            <a  href="#"><img src="/images/bici1-1.jpg" alt="bicicleta4" width="250px" height="250px"   ></a>
+        </article>
+    </article>
+    <article class="productRelacionado">
+        <a  href="#"><img src="/images/bici1-2.jpg" alt="bicicleta4" width="250px" height="250px"  ></a>
+    </article>
+    <article class="productRelacionado">
+        <a  href="#"><img src="/images/bici1-3.jpg" alt="bicicleta4" width="250px" height="250px"  ></a>
+
+        <br>
+    </article>
+    </section>
+
+</main>
+<%-include("./partials/footer")%>
+</body>
+</html>

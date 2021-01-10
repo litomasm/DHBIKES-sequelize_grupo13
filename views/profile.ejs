@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+
+    <%-include("./partials/head")%>
+
+    <body>
+        <%-include("./partials/header")%>
+        <br>
+        <br>
+        <main class="mainregistro">
+            <h2>Mi Perfil</h2>
+            <div class= "fotoProfile">
+                <article class="foto">
+                    <img  src="/images//users/<%= image %>" alt="fotoDelUsuario" width="85%" height="100%" title="fotoDelUsuario">
+                </article>
+            </div>
+
+            <div class="nombreymail">
+                <h2> ¡Hola <%= nombre %> <%= apellido %>! </h2> <br>
+                
+                <h2> <%= email %></h2> <br>
+
+                <form class="formregister" action="/user/profile" method="POST">
+                     
+                    <a href="#"><button id="logout" type="submit">Cerrar Sesión</button></a>   
+            </div>
+                     
+                 
+            
+           
+            
+        </main>
+<br>
+        <%-include("./partials/footer")%>
+
+    </body>
+</html>

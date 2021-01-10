@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <%-include("./partials/head")%>
+
+    <body>
+        <%-include("./partials/header")%>
+        <br>
+        <br>
+        <main class="mainregistro">
+            <h2>Formulario de Registro</h2>
+            <div class="formregistro">
+                <form class="formregister" action="/user/registro" method="POST" enctype="multipart/form-data">
+                    <div>
+                        <article id="nombreregistro">
+                            <label for="nombre">Nombre *</label> <br>
+                            <input type="text" id="nombre" name="nombre">
+                            <% if (typeof errors != "undefined") { %>    
+                                <% for(let i=0; i < errors.length; i++) { %>  
+                                  <% if(errors[i].param=="nombre") { %>
+                                    <p class="parrafo-errors-p"><%= errors[i].msg%></p>
+                                  <% } %>
+                                <% } %>
+                              <% } %>  
+                              <br><br>
+                        </article>
+                    </div>
+                    <div>
+                        <article id="apellidoregistro">
+                            <label for="apellido">Apellido *</label> <br>
+                            <input type="text" id="apellido" name="apellido">
+                            <% if (typeof errors != "undefined") { %>    
+                                <% for(let i=0; i < errors.length; i++) { %>  
+                                  <% if(errors[i].param=="apellido") { %>
+                                    <p class="parrafo-errors-p"><%= errors[i].msg%></p>
+                                  <% } %>
+                                <% } %>
+                              <% } %>  
+                            <br><br>
+                        </article>
+                    </div>
+                    <div>
+                        <article id="primeritem">
+                            <label for="correo">Correo Electrónico *</label> <br>
+                            <input type="email" id="mail" name="email">
+                            <% if (typeof errors != "undefined") { %>    
+                                <% for(let i=0; i < errors.length; i++) { %>  
+                                  <% if(errors[i].param=="email") { %>
+                                    <p class="parrafo-errors-p"><%= errors[i].msg%></p>
+                                  <% } %>
+                                <% } %>
+                              <% } %>  
+                            <br><br>
+                            <label for="password3">Contraseña *</label> <br>
+                            <input type="password" id="password3" name="password">
+                           <!--<label for="correo">Confirma Contraseña *</label> <br>
+                            <input type="password" id="password4" name="password"><br>--> 
+                            <% if (typeof errors != "undefined") { %>    
+                                <% for(let i=0; i < errors.length; i++) { %>  
+                                  <% if(errors[i].param=="password") { %>
+                                    <p class="parrafo-errors-p"><%= errors[i].msg%></p>
+                                  <% } %>
+                                <% } %>
+                              <% } %>
+                              <br><br>  
+                        </article>
+                        <div >
+                            <article>
+                                <input type="file" name='fotoPerfil' class='estilo-boton-archivo' accept="image/*">
+                                <% if (typeof error != "undefined") { %>    
+                                    <p class="parrafo-errors-p"><%= error%></p>
+                                <% } %>
+                                <br><br>
+                            </article>
+                        </div>
+                    </div>
+                    <div>
+                        <article id="campos">
+                            <p>*Campos Requeridos</p>
+                            </article>
+                            <p id="suscribir"><input type="checkbox" name="suscribir" id="suscribir"> Suscribite para recibir novedades y promociones </p>
+                            <article id="olvidar"><a href="#"><p>¿Olvidaste tu contraseña?</p></a>
+                        </article> <br>
+                    </div>
+                    
+                    
+                
+                    <a href="#"><button id="botonregistro" type="submit">Registrarse</button></a>
+                
+                </form>
+            </div>
+            <h4>Tus datos personales se utilizarán para procesar tu pedido, mejorar tu experiencia en esta web, gestionar el acceso a tu cuenta y otros propósitos descritos en nuestra <a href="#">política de privacidad.</a></h4>
+            
+        </main>
+<br>
+        <%-include("./partials/footer")%>
+
+    </body>
+</html>

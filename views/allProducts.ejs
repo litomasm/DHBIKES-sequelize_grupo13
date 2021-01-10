@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%-include("./partials/head")%>
+
+<body>
+    <%-include("./partials/header")%>
+
+    <main>
+
+    <div class="container products-wrapper">
+		<div class="row">
+			<div class="col-12">
+				<h2 class="products-title">Todos los productos</h2>
+			</div>
+			
+			<div class='box-justiffy'>
+				<% for (product of products) { %>
+					<section class="product-box">
+						<a href="/producto/detail/<%= product.id %>">
+							<div class="product-box_image">
+								<img id="image-allProduct" src="/images/products/<%= product.image %>" alt="imagen de producto">
+							</div>
+							<article class="product-box_data">
+								<h2>$ <%= product.price %></h2>
+									
+								<p><%= product.name %></p>
+									
+							</article>
+						</a>
+					</section>
+				<% } %>
+		    </div>
+		</div>
+    </div>
+    
+</main>
+<%-include("./partials/footer")%>
+</body>
+</html>

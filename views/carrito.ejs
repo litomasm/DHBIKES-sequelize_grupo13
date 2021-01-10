@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<%-include("./partials/head")%>
+
+<body>
+    <%-include("./partials/header")%>
+    <main id='cuerpoPrincipalCarrito'>
+        <hr>
+        <h2>Mi Carrito</h2>
+        <hr>
+        <section>
+            <table class="anchotabla">
+                <thead>
+                    <tr>
+                        <th >
+                            <span>Producto</span>
+                        </th>
+                        <th>
+                            <span>Precio</span>
+                        </th>
+                        <th>
+                            <span>Cantidad</span>
+                        </th>
+                        <th>
+                            <span>Subtotal</span>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th>
+                            <img src="/images/bici1.jpg" alt="bicicleta1" width="160px" height="160px">
+                        </th>
+                        <th>
+                            <span>AR$ 64.000</span>
+                        </th>
+                        <th>
+                            <span><i class="far fa-minus-square"></i> 1 <i class="far fa-plus-square"></i></span>
+                        </th>
+                        <th>
+                            <span>AR$ 64.000 <i class="fas fa-trash-alt"></i></span>
+                        </th>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="totalcarrito">
+                <table  class="totalcarrito2">
+                    <thead>
+                        <th colspan="2">Total del Carrito</th>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <th>Sub Total</th>
+                        <td>AR$ 64.000</td>
+                    </tr>
+                    <tr>
+                        <th>Envio</th>
+                        <td>Calcular Envio <i class="fas fa-truck"></i></td>
+                    </tr>
+                    <tr>
+                        <th>Total</th>
+                        <td>AR$ 64.000</td>
+                    </tr>
+                    <tr>
+                        <th colspan="2"><a href="#"><button type="button">Finalizar Compra</button></a></th>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+   
+    <div class="descuento">
+        <input type="text" name="codigo" id="codigo"  placeholder="Codigo de Descuento"> 
+        <a href="#"></a>
+        <a href="#"><button type="button">Aplicar Código</button></a>
+    </div>
+    
+
+    </main>
+    
+
+    <%- include("./partials/footer") %>
+
+</body>
+</html>
