@@ -10,7 +10,7 @@
     <section id="producto">
         <div class='fotoProductoBici'>
             <article class="foto">
-                <img  src="/images/products/<%= product.image %>" alt="Futura Futy" width="85%" height="100%" title="Futura Futy">
+                <img  src="" alt="Futura Futy" width="85%" height="100%" title="Futura Futy">
             </article>
         </div>
         <div>
@@ -35,20 +35,20 @@
             </div>
                     
             <div id="infoAdicional"> 
-                <h4 class="tituloDescripcionInfo">Informacion adicional</h4><br>
+                <h4 class="tituloDescripcionInfo">Categoría</h4><br>
                 <p class="descripcionParrafo">
-                    <%= product.info %>
+                    <%= product.category.name%>
                 </p>
             </div>
             <div class='botonEditYDeleted'>
                 <div class='cajabotonEditYDeleted'>
-                    <%  if(typeof id != 'undefined') { %>
-                    <a href="/producto/edit/<%= product.id %>" class="action-button edit">EDITAR PRODUCTO</a>
-                    <form action="/producto/delete/<%= product.id %>?_method=DELETE" method="POST">
+                    
+                    <a href="/products/editar/<%= product.id %>" class="action-button delete">EDITAR PRODUCTO</a>
+                    <form action="/products/borrar/<%= product.id %>" method="POST">
                         <button type="submit" class="action-button delete">ELIMINAR</button>
                     </form>
                     <br>
-                    <% } %>
+                    
                 </div>
             </div>
         
