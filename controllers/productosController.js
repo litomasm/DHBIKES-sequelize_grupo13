@@ -8,13 +8,17 @@ let productosController = {
         })
 
     },
-    guardado: function (req, res){
-        db.Product.create({
+    guardado: async function (req, res, next){
+
+        const files = req.files;
+        const images = files.map( image => image.filename);
+
+        let product = await db.Product.create({
             name: req.body.name,
             price: req.body.price,
             category_id: req.body.category,
             description: req.body.description,
-
+            information: req.body.information,
 
         });
         res.redirect("/")

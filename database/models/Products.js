@@ -15,9 +15,17 @@ module.exports = function(sequelize, dataTypes){
         category_id: {
             type:dataTypes.INTEGER
         },
+
+        image: {
+            type: dataTypes.STRING
+        },
         
         description: {
             type:dataTypes.TEXT
+        },
+
+        information: {
+            type: dataTypes.TEXT
         },
     }
 
