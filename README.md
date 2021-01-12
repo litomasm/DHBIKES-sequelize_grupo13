@@ -42,3 +42,8 @@ Como en todas las entregas anteriores realizamos una videollamada para charlar s
 A su vez, analizamos los entregables de este nuevo sprint para poder dividirnos las tareas y encaralo con tiempo y tranquilidad. Si bien nos dividimos las tareas, estamos en continua comunicación entre los tres para ayudarnos y consultarnos por cualquier problema o error que surge. También nos vamos compartiendo todos cambios y mejoras que cada uno va realizando para que todos tengamos los archivos actualizados en nuestros equipos.
 
 Luego de 5 sprints, nos encontramos trabjando enconjunto de gran manera, muy comodos y sin ningun cortocircuito.
+
+WEEKLY-SPRINT 6
+Para esta entrega nuevamente nos organizamos entre los 3 para poder completar con todos los pasos. Antes que nada, corregir los 3 puntos del sprint anterior que teniamos que mejorar. En segundo lugar, avanzar con los nuevos puntos. 
+Realizamos varias llamadas y videollamadas para repartirnos los puntos e ir solucionandolos, ademas de utilizar los colerning para solucionar dudas. 
+Seguimos trabajando en equipo y ordenadamente manteniendo la comunicación fulida para que cada uno sepa en que esta trabajando el otro. 
