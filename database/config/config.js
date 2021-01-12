@@ -5,7 +5,9 @@ module.exports = {
     "database": "dhbikes",
     "host": "127.0.0.1",
     "dialect": "mysql",
-    "operatorAliases": false
+    "define": {
+      "underscored": true
+    }
   },
   "test": {
     "username": "root",
