@@ -6,28 +6,16 @@ const path = require("path");
 
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
-        cb(null, path.join("public/imgs/products"))
+        cb(null, path.join("public/images/products"))
     },
     filename: function (req, file, cb) {
         cb(null, Date.now() + '-' + file.originalname)
     }
 })
 
-const upload = multer({storage,
+const upload = multer({ storage: storage })
 
-fileFilter: (req, file, cb) => {
-		
-		const acceptedExt = ['.jpg','.webp','.jpeg','.png']
-		const ext = path.extname(file.originalname)
-		
-		if(!acceptedExt.includes(ext)){
-      
-      req.files = [...req.files ,file]
-      
-		}
-		cb(null,acceptedExt.includes(ext));
-    }
-})
+
 
 //Crear producto
 router.get('/crear',productosController.crear);
@@ -35,6 +23,12 @@ router.post('/crear',upload.any(), productosController.guardado);
 
 //Todos los productos
 router.get("/", productosController.list);
+
+//Filtrar productos
+router.get("/filter", productosController.filter)
+
+//Ruta hacia la búsqueda del producto
+router.get('/search', productosController.search)
 
 //Detalle
 router.get("/detail/:id", productosController.detail);
