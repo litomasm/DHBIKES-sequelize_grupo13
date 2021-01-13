@@ -1,28 +1,33 @@
+const { validationResult } = require("express-validator");
 let db = require("../database/models");
 
 let usersController = {
-    crear: function (req, res){
+    register: function (req, res){
         
             return res.render("registro");
         
     },
-    guardado: function (req, res){
-        db.User.create({
-            name: req.body.name,
-            last_name: req.body.last_name,
-            email: req.body.email,
-            password: req.body.password,
-
+    processRegister: async(req, res, next) => {
+        let errors = validationResult(req);
+        if (!errors.isEmpty()){
+            return res.render('registro',{errors:validation.errors})
+        }else {
+            await db.user.create({
+                nombre: req.body.nombre,
+                apellido: req.body.apellido,
+                email: req.body.email,
+                password: passwordHashed,
+                image: req.file.filename
+    
 
         });
-        res.redirect("/")
+        res.redirect("/")}
     },
-
-    login: (req, res) => {
+       login: (req, res) => {
         res.render("login");
      },
 
-    /* ingresoUsuario: (req, res) => {
+        processLogin: async (req, res) => {
 
         
         const validation = validationResult(req);
@@ -32,14 +37,11 @@ let usersController = {
 		}else{
             const email= req.body.email;
             const password = req.body.password;
-            const users = getAllUsers();
+            const users = await db.User.findOne({where:{email:req.body.email}}); 
             
             const userExist = users.find((user) =>{
                 return user.email === email;
             });
-
-            
-            
 
             if(userExist && bcryptjs.compareSync(password, userExist.password)) {
                
@@ -55,13 +57,12 @@ let usersController = {
                 return res.render('login',{errors:[{msg: 'Credenciales invalidas'}]})
             }
 
-                  
         }     
 
      },
-    profile: (req, res) => {
+    profile: async (req, res, next) => {
 
-        const user =  req.session.user;
+        const user = await db.User.findOne({were: {email:req.session.User}})  
        
         res.render("profile", {
             id:user.id,
@@ -73,7 +74,7 @@ let usersController = {
         });
      },
 
-*/   
+
 };
  
 

@@ -10,7 +10,7 @@ const authMiddleware = require("../middleware/authMiddleware")
 const uploadUserMiddleware = require('../middleware/uploadUserMiddleware')
 const guestMiddleware = require('../middleware/guestMiddleware')
 
-/* const storage = multer.diskStorage({
+const storage = multer.diskStorage({
     destination: function (req, file, cb) {
       cb(null, __dirname + '/../../public/images/users')
       
@@ -23,9 +23,11 @@ const guestMiddleware = require('../middleware/guestMiddleware')
    
 const upload = multer({ storage: storage })
 
-const usersFilePath = path.join(__dirname + "/../data/usuarios.json") */
+/* const usersFilePath = path.join(__dirname + "/../data/usuarios.json")*/
 
-router.get('/register',usersController.crear);
-router.post('/register',usersController.guardado);
+router.get('/register',usersController.register);
+router.post('/register',usersController.processRegister);
+router.get('/login',usersController.login);
+router.post('/login',usersController.processLogin);
 
 module.exports = router;
